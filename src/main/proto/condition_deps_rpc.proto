@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.jeeconf.grpcdemo.dependencies";
+package com.jeeconf.grpcdemo;
+
+import "condition.proto";
+
+service TemperatureService {
+    rpc GetCurrent(Altitude) returns (Temperature);
+}
+service PressureService {
+    rpc GetCurrent(Altitude) returns (Pressure);
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.jeeconf.grpcdemo";
+package com.jeeconf.grpcdemo;
+
+message ConditionRequest {
+    Altitude altitude = 1;
+}
+
+message Altitude {
+    fixed64 heightAboveSea = 1;
+}
+
+message ConditionResponse {
+    Pressure pressure = 1;
+    Temperature temperature = 2;
+}
+
+message Temperature {
+    float degrees = 1;
+    Units units = 2;
+    enum Units {
+        FAHRENHEIT = 0;
+        CELSUIS = 1;
+        KELVIN = 2;
+    }
+}
+
+message Pressure {
+     float value = 1;
+     Units units = 2;
+     enum Units {
+         MPA = 0;
+         PSI = 1;
+     }
+}

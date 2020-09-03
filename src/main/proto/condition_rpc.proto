@@ -5,8 +5,8 @@ option java_package = "com.jeeconf.grpcdemo";
 
 package com.jeeconf.grpcdemo;
 
-import "weather.proto";
+import "condition.proto";
 
-service WeatherService {
-    rpc GetCurrent (WeatherRequest) returns (WeatherResponse);
+service ConditionService {
+    rpc GetCurrent (ConditionRequest) returns (ConditionResponse);
 }
